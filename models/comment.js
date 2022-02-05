@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Task extends Model {}
+class Task extends Model {} //originally 'comment.js's - USE THIS AS YOUR MODEL
 
 Task.init(
   {
@@ -10,6 +10,10 @@ Task.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     comment_text: {
       type: DataTypes.STRING,
