@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Task } = require('../../models'); // use Task.js?
+const { Task } = require('../../models'); // check if this is linked correctly
 
 // get all tasks
 router.get('/', (req, res) => {

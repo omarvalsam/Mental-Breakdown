@@ -15,7 +15,7 @@ Task.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    comment_text: {
+    Task_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -41,7 +41,7 @@ Task.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'Task'
   }
 );
 
