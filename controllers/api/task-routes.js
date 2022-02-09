@@ -6,34 +6,34 @@ const { Task, User } = require("../../models"); // check if this is linked corre
 router.get("/", (req, res) => {
   console.log("======================");
   Task.findAll({
-    attributes: [
-      //will change depending on front end structures
-      "id",
-      "Task_url",
-      "title",
-      "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)"
-        ),
-        "vote_count",
-      ],
-    ],
-    order: [["created_at", "DESC"]],
-    include: [
-      {
-        model: Task,
-        attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
+    // attributes: [
+    //   //will change depending on front end structures
+    //   "id",
+    //   "Task_url",
+    //   "title",
+    //   "created_at",
+    //   [
+    //     sequelize.literal(
+    //       "(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)"
+    //     ),
+    //     "vote_count",
+    //   ],
+    // ],
+    // order: [["created_at", "DESC"]],
+    // include: [
+    //   {
+    //     model: Task,
+    //     attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
+    //     include: {
+    //       model: User,
+    //       attributes: ["username"],
+    //     },
+    //   },
+    //   {
+    //     model: User,
+    //     attributes: ["username"],
+    //   },
+    // ],
   })
     .then((dbTaskData) => res.json(dbTaskData))
     .catch((err) => {
