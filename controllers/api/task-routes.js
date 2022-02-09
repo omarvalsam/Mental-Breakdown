@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require('../../config/connection');
-const { Task } = require('../../models/Task'); 
+const { Task, User } = require('../../models/Task'); 
+
 // get all tasks
 router.get("/", (req, res) => {
   console.log("======================");
@@ -44,10 +45,10 @@ router.get("/:id", (req, res) => {
     },
     attributes: [ //will change depending on front end structures
       'Task_id',
-      'title',
-      'Task_text',
-      'user_id',
-      'post_id'
+      // 'title',
+      // 'Task_text',
+      // 'user_id',
+      // 'post_id'
       [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)'), 'vote_count']
     ],
     include: [
