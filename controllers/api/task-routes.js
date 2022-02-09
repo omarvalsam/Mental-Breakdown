@@ -6,17 +6,18 @@ router.get('/', (req, res) => {
   console.log('======================');
   Task.findAll({
     attributes: [ 
-      'id',
-      'Task_url',
+      'Task_id',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)'), 'vote_count']
+      'Task_text',
+      'user_id',
+      'post_id'
+      [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns')] //!!double check this!!
     ],
-    order: [['created_at', 'DESC']],
+    // order: [['created_at', 'DESC']],
     include: [
       {
-        model: Task,
-        attributes: ['id', 'Task_text', 'Task_id', 'user_id', 'created_at'],
+        model: 'Task',
+        attributes: ['Task_id', 'title', 'Task_text', 'user_id', 'post_id' ], // remove user_id since username is down below?
         include: {
           model: User,
           attributes: ['username']
@@ -42,11 +43,12 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [ //will change depending on front end structures
-      'id',
-      'Task_url',
+      'Task_id',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)'), 'vote_count']
+      'Task_text',
+      'user_id',
+      'post_id'
+      [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)'), 'vote_count']
     ],
     include: [
       {

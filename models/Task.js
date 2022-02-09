@@ -5,7 +5,7 @@ class Task extends Model {} //originally 'comment.js's - USE THIS AS YOUR MODEL
 
 Task.init(
   {
-    id: {
+    Task_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
