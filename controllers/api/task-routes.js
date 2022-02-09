@@ -1,12 +1,11 @@
 const router = require("express").Router();
 const sequelize = require('../../config/connection');
-const { Task } = require('../../models/Task'); // check if this is linked correctly
-
+const { Task } = require('../../models/Task'); 
 // get all tasks
 router.get('/', (req, res) => {
   console.log('======================');
   Task.findAll({
-    attributes: [ //will change depending on front end structures
+    attributes: [ 
       'id',
       'Task_url',
       'title',
