@@ -19,7 +19,7 @@ User.init(
       allowNull: false,
     },
     email: {
-      dataType: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
@@ -59,3 +59,5 @@ User.init(
     modelName: "user",
   }
 );
+
+module.exports = User;

@@ -1,77 +1,89 @@
-const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Task } = require('../../models'); // check if this is linked correctly
+const router = require("express").Router();
+const sequelize = require("../../config/connection");
+const { Task, User } = require("../../models"); // check if this is linked correctly
 
 // get all tasks
-router.get('/', (req, res) => {
-  console.log('======================');
+router.get("/", (req, res) => {
+  console.log("======================");
   Task.findAll({
-    attributes: [ //will change depending on front end structures
-      'id',
-      'Task_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)'), 'vote_count']
+    attributes: [
+      //will change depending on front end structures
+      "id",
+      "Task_url",
+      "title",
+      "created_at",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)"
+        ),
+        "vote_count",
+      ],
     ],
-    order: [['created_at', 'DESC']],
+    order: [["created_at", "DESC"]],
     include: [
       {
         model: Task,
-        attributes: ['id', 'Task_text', 'Task_id', 'user_id', 'created_at'],
+        attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbTaskData => res.json(dbTaskData))
-    .catch(err => {
+    .then((dbTaskData) => res.json(dbTaskData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 //Get one task
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Task.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [ //will change depending on front end structures
-      'id',
-      'Task_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)'), 'vote_count']
+    attributes: [
+      //will change depending on front end structures
+      "id",
+      "Task_url",
+      "title",
+      "created_at",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)"
+        ),
+        "vote_count",
+      ],
     ],
     include: [
       {
         model: Task,
-        attributes: ['id', 'Task_text', 'Task_id', 'user_id', 'created_at'],
+        attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbTaskData => {
+    .then((dbTaskData) => {
       if (!dbTaskData) {
-        res.status(404).json({ message: 'No Task found with this id' });
+        res.status(404).json({ message: "No Task found with this id" });
         return;
       }
       res.json(dbTaskData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -125,20 +137,21 @@ router.get('/:id', (req, res) => {
 //     });
 // });
 
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   Task.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-    .then(dbTaskData => { //dbTaskData from schema? - will have to name data this or update when needed
+    .then((dbTaskData) => {
+      //dbTaskData from schema? - will have to name data this or update when needed
       if (!dbTaskData) {
-        res.status(404).json({ message: 'No Task found with this id' });
+        res.status(404).json({ message: "No Task found with this id" });
         return;
       }
       res.json(dbTaskData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
