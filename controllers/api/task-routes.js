@@ -1,36 +1,11 @@
 const router = require("express").Router();
-const sequelize = require('../../config/connection');
-const { Task, User } = require('../../models/Task'); 
+const sequelize = require("../../config/connection");
+const { Task, User } = require("../../models/Task");
 
 // get all tasks
 router.get("/", (req, res) => {
   console.log("======================");
   Task.findAll({
-<<<<<<< HEAD
-    attributes: [ 
-      'Task_id',
-      'title',
-      'Task_text',
-      'user_id',
-      'post_id'
-      [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns')] //!!double check this!!
-    ],
-    // order: [['created_at', 'DESC']],
-    include: [
-      {
-        model: 'Task',
-        attributes: ['Task_id', 'title', 'Task_text', 'user_id', 'post_id' ], // remove user_id since username is down below?
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
-=======
     // attributes: [
     //   //will change depending on front end structures
     //   "id",
@@ -59,7 +34,6 @@ router.get("/", (req, res) => {
     //     attributes: ["username"],
     //   },
     // ],
->>>>>>> 48805c67f9db99b97541582a113b741cdaa7e8d7
   })
     .then((dbTaskData) => res.json(dbTaskData))
     .catch((err) => {
@@ -74,13 +48,19 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [ //will change depending on front end structures
-      'Task_id',
+    attributes: [
+      //will change depending on front end structures
+      "Task_id",
       // 'title',
       // 'Task_text',
       // 'user_id',
       // 'post_id'
-      [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)'), 'vote_count']
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)"
+        ),
+        "vote_count",
+      ],
     ],
     include: [
       {
