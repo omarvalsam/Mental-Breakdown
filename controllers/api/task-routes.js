@@ -2,8 +2,8 @@ const router = require("express").Router();
 const sequelize = require('../../config/connection');
 const { Task } = require('../../models/Task'); 
 // get all tasks
-router.get('/', (req, res) => {
-  console.log('======================');
+router.get("/", (req, res) => {
+  console.log("======================");
   Task.findAll({
     attributes: [ 
       'Task_id',
@@ -20,27 +20,27 @@ router.get('/', (req, res) => {
         attributes: ['Task_id', 'title', 'Task_text', 'user_id', 'post_id' ], // remove user_id since username is down below?
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbTaskData => res.json(dbTaskData))
-    .catch(err => {
+    .then((dbTaskData) => res.json(dbTaskData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 //Get one task
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Task.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     attributes: [ //will change depending on front end structures
       'Task_id',
@@ -53,26 +53,26 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Task,
-        attributes: ['id', 'Task_text', 'Task_id', 'user_id', 'created_at'],
+        attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbTaskData => {
+    .then((dbTaskData) => {
       if (!dbTaskData) {
-        res.status(404).json({ message: 'No Task found with this id' });
+        res.status(404).json({ message: "No Task found with this id" });
         return;
       }
       res.json(dbTaskData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -126,20 +126,21 @@ router.get('/:id', (req, res) => {
 //     });
 // });
 
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   Task.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-    .then(dbTaskData => { //dbTaskData from schema? - will have to name data this or update when needed
+    .then((dbTaskData) => {
+      //dbTaskData from schema? - will have to name data this or update when needed
       if (!dbTaskData) {
-        res.status(404).json({ message: 'No Task found with this id' });
+        res.status(404).json({ message: "No Task found with this id" });
         return;
       }
       res.json(dbTaskData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
