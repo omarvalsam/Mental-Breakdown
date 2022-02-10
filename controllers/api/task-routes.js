@@ -9,16 +9,14 @@ router.get("/", (req, res) => {
     attributes: [ 
       'Task_id',
       'title',
-      'Task_text',
-      // 'user_id',
-      // 'post_id'
+      'Task_text'
       [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns')] //!!double check this!!
     ],
     // order: [['created_at', 'DESC']],
     include: [
       {
         model: 'Task',
-        attributes: ['Task_id', 'title', 'Task_text'], // remove user_id since username is down below?
+        attributes: ['Task_id', 'title', 'Task_text' ], // remove user_id since username is down below?
         include: {
           model: User,
           attributes: ["username"],
