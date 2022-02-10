@@ -6,20 +6,17 @@ const { Task, User } = require('../../models/Task');
 router.get("/", (req, res) => {
   console.log("======================");
   Task.findAll({
-<<<<<<< HEAD
     attributes: [ 
       'Task_id',
       'title',
-      'Task_text',
-      'user_id',
-      'post_id'
+      'Task_text'
       [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns')] //!!double check this!!
     ],
     // order: [['created_at', 'DESC']],
     include: [
       {
         model: 'Task',
-        attributes: ['Task_id', 'title', 'Task_text', 'user_id', 'post_id' ], // remove user_id since username is down below?
+        attributes: ['Task_id', 'title', 'Task_text' ], // remove user_id since username is down below?
         include: {
           model: User,
           attributes: ["username"],
@@ -30,36 +27,6 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
-=======
-    // attributes: [
-    //   //will change depending on front end structures
-    //   "id",
-    //   "Task_url",
-    //   "title",
-    //   "created_at",
-    //   [
-    //     sequelize.literal(
-    //       "(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)"
-    //     ),
-    //     "vote_count",
-    //   ],
-    // ],
-    // order: [["created_at", "DESC"]],
-    // include: [
-    //   {
-    //     model: Task,
-    //     attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
-    //     include: {
-    //       model: User,
-    //       attributes: ["username"],
-    //     },
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ["username"],
-    //   },
-    // ],
->>>>>>> 48805c67f9db99b97541582a113b741cdaa7e8d7
   })
     .then((dbTaskData) => res.json(dbTaskData))
     .catch((err) => {
