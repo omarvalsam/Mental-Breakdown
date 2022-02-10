@@ -19,41 +19,27 @@ Task.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-<<<<<<< HEAD
-        len: [1]
-      }
-=======
         len: [1],
       },
->>>>>>> develop
     },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+    }
     // user_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
-<<<<<<< HEAD
-    //     model: 'user',
-    //     key: 'id'
-    //   }
-=======
     //     model: "user",
     //     key: "id",
     //   },
->>>>>>> develop
     // },
     // post_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
-<<<<<<< HEAD
-    //     model: 'post',
-    //     key: 'id'
-    //   }
-    // }
-=======
     //     model: "post",
     //     key: "id",
     //   },
     // },
->>>>>>> develop
   },
   {
     sequelize,

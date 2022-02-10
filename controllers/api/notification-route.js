@@ -11,7 +11,9 @@
 //should it be a function that runs when the submit/save button is pressed? no backend needed?
 
 const router = require("express").Router();
-const { Notification } = require('../../models/notification');
+const { Notification, Task } = require('../../models');
+
+let notificationBrowser() = 
 
 //function that runs when submit/save button is clicked
 // app.listen(button pressed)
@@ -20,9 +22,8 @@ const { Notification } = require('../../models/notification');
 //get updated notification
 router.get('/', (req, res) => {
   console.log('route check!')
-  Notification.findAll({
-    attributes: {
-      //submit/save button id
-    }
+  Task.findAll({
+    attributes: ["createdAt"]
   })
+  .then(notificationBrowser)
 }); 

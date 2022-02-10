@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: 'Task',
-        attributes: ['Task_id', 'title', 'Task_text' ], // remove user_id since username is down below?
+        attributes: ['Task_id', 'title', 'Task_text' ],
         include: {
           model: User,
           attributes: ["username"],
