@@ -1777,99 +1777,6 @@ input, select, textarea {
 				margin-left: 0;
 			}
 
-/* Contact */
-
-	ul.contact {
-		list-style: none;
-		padding-left: 0;
-	}
-
-		ul.contact li {
-			position: relative;
-			border-top: solid 1px #ddd;
-			padding: 1.3em 0 1.3em 7em;
-		}
-
-			ul.contact li h3 {
-				position: absolute;
-				left: 0;
-				top: 1.3em;
-				font-size: 1.1em;
-			}
-
-			ul.contact li p {
-				margin: 0;
-			}
-
-			ul.contact li:first-child {
-				padding-top: 0;
-				border-top: 0;
-			}
-
-				ul.contact li:first-child h3 {
-					top: 0;
-				}
-
-/* Dates */
-
-	ul.dates {
-		list-style: none;
-		padding-left: 0;
-	}
-
-		ul.dates li {
-			position: relative;
-			border-top: solid 1px #ddd;
-			padding: 1.3em 0 1.3em 6.75em;
-		}
-
-		ul.dates .date {
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 1.3em;
-			background-color: #d52349;
-			height: 3.5em;
-			text-align: center;
-			color: #fff;
-			line-height: 1em;
-			border-top-left-radius: 5px;
-			border-bottom-left-radius: 5px;
-			padding: 0.5em 0.75em 0 1em;
-		}
-
-			ul.dates .date:after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				right: -1.2em;
-				border-left: solid 1.25em #d52349;
-				border-top: solid 1.8em transparent;
-				border-bottom: solid 1.8em transparent;
-			}
-
-			ul.dates .date strong {
-				display: block;
-				font-size: 1.75em;
-				padding-top: 0.15em;
-			}
-
-		ul.dates h3 {
-			font-size: 1.1em;
-		}
-
-		ul.dates p {
-			margin: 0;
-		}
-
-		ul.dates li:first-child {
-			border-top: 0;
-			padding-top: 0;
-		}
-
-			ul.dates li:first-child .date {
-				top: 0;
-			}
 
 /* Divided */
 
@@ -2061,7 +1968,7 @@ input, select, textarea {
 		}
 
 			#banner header h2 {
-				color: #8ee3ef;
+				color: #aef3e7;
 				font-weight: 700;
 				font-size: 2.5em;
 				margin: 0 0 0.65em 0;
