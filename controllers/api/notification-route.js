@@ -11,18 +11,65 @@
 //should it be a function that runs when the submit/save button is pressed? no backend needed?
 
 const router = require("express").Router();
-const { Notification } = require('../../models/notification');
+const { Notification, Task } = require('../../models/notification');
 
-//function that runs when submit/save button is clicked
-// app.listen(button pressed)
+
+// Notification function start
+typeof Notification !== "undefined"
+
+Notification.requestPermission().then(function (permission) {
+  console.log(permission);
+});
+
+var title = "{Task - "title"} was changed {Task - created_at}";
+var body = {Task - "Task_text"};
+var notification = new Notification(title, {body});
+
+let showNotification = document.visibilityState !== "visible";
+if(showNotification) {
+  //notification code
+}
+
+var notification = new Notification('Travel');
+notification.close();
+notification.onclick = function(){
+  window.parent.focus();
+  notification.close();
+}
+
+let permission = Notification.permission;
+if(permission === "granted"){
+  showNotification();
+}else if(permission === "default"){
+  requestAndShowPermission();
+}else { alert("use normal alert");}
+
+function showNotification(){
+  if(document.visibilityState === "visible"){
+    return;
+  }
+  var title = "{Task - "title"} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
+  var notification = new notification(title); //notification will show title variable?
+  notification.onclick = () => {
+    notification.close();window.parent.focus();
+  }
+}
+
+function requestAndShowPermission() {
+  Notification.requestPermission(function (permission){
+    if (permission === "granted"){
+      showNotification();
+    }
+  });
+}
+//Notification function end
 
 
 //get updated notification
 router.get('/', (req, res) => {
   console.log('route check!')
-  Notification.findAll({
-    attributes: {
-      //submit/save button id
-    }
+  Task.findAll({
+    attributes: ["created_at"]
   })
+  .then()
 }); 
