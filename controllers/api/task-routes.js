@@ -1,11 +1,12 @@
 const router = require("express").Router();
-const sequelize = require('../../config/connection');
-const { Task, User } = require('../../models/Task'); 
+const sequelize = require("../../config/connection");
+const { Task, User } = require("../../models/Task");
 
 // get all tasks
 router.get("/", (req, res) => {
   console.log("======================");
   Task.findAll({
+<<<<<<< HEAD
     attributes: [ 
       'Task_id',
       'title',
@@ -27,6 +28,36 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
+=======
+    // attributes: [
+    //   //will change depending on front end structures
+    //   "id",
+    //   "Task_url",
+    //   "title",
+    //   "created_at",
+    //   [
+    //     sequelize.literal(
+    //       "(SELECT COUNT(*) FROM vote WHERE Task.id = vote.Task_id)"
+    //     ),
+    //     "vote_count",
+    //   ],
+    // ],
+    // order: [["created_at", "DESC"]],
+    // include: [
+    //   {
+    //     model: Task,
+    //     attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
+    //     include: {
+    //       model: User,
+    //       attributes: ["username"],
+    //     },
+    //   },
+    //   {
+    //     model: User,
+    //     attributes: ["username"],
+    //   },
+    // ],
+>>>>>>> 171cae4420574119e4defb9a06f6af8b7904aeee
   })
     .then((dbTaskData) => res.json(dbTaskData))
     .catch((err) => {
@@ -41,13 +72,19 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [ //will change depending on front end structures
-      'Task_id',
+    attributes: [
+      //will change depending on front end structures
+      "Task_id",
       // 'title',
       // 'Task_text',
       // 'user_id',
       // 'post_id'
-      [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)'), 'vote_count']
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)"
+        ),
+        "vote_count",
+      ],
     ],
     include: [
       {
