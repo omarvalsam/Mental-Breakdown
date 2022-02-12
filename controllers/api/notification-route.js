@@ -68,5 +68,5 @@ router.get("/", (req, res) => {
   console.log("route check!");
   Task.findAll({
     attributes: ["created_at"],
-  }).then();
+  }).then(showNotification);
 });
