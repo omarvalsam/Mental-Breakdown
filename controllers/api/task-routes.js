@@ -59,7 +59,6 @@ router.get("/:id", (req, res) => {
         sequelize.literal(
           "(SELECT COUNT(*) FROM mental_breakdowns WHERE Task.id = mental_breakdowns.Task_id)"
         ),
-        "vote_count",
       ],
     ],
     include: [

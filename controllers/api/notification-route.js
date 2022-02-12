@@ -21,46 +21,43 @@ Notification.requestPermission().then(function (permission) {
   console.log(permission);
 });
 
-var title = "{Task - 'title'} was changed {Task - created_at}";
-var body = {Task = "Task_text"};
-var notification = new Notification(title, {body});
+// var title = "{Task - "title"} was changed {Task - created_at}";
+// var body = {Task - "Task_text"};
+// var notification = new Notification(title, {body});
 
 let showNotification = document.visibilityState !== "visible";
 if(showNotification) {
   //notification code
-}
-
-var notification = new Notification('Travel');
-notification.close();
-notification.onclick = function(){
-  window.parent.focus();
+  var notification = new Notification('Travel');
   notification.close();
-}
-
-let permission = Notification.permission;
-if(permission === "granted"){
-  showNotification();
-}else if(permission === "default"){
-  requestAndShowPermission();
-}else { alert("use normal alert");}
-
-function showNotification(){
-  if(document.visibilityState === "visible"){
-    return;
+  notification.onclick = function(){
+    window.parent.focus();
+    notification.close();
   }
-  var title = "{Task - 'title'} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
-  var notification = new notification(title); //notification will show title variable?
-  notification.onclick = () => {
-    notification.close();window.parent.focus();
-  }
-}
-
-function requestAndShowPermission() {
-  Notification.requestPermission(function (permission){
-    if (permission === "granted"){
+  let permission = Notification.permission;
+    if(permission === "granted"){
       showNotification();
+    }else if(permission === "default"){
+      requestAndShowPermission();
+    }else { alert("use normal alert");}
+
+  function showNotification(){
+      if(document.visibilityState === "visible"){
+        return;
+      }
+      var title = "{Task - "title"} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
+      var notification = new notification(title); //notification will show title variable?
+      notification.onclick = () => {
+        notification.close();window.parent.focus();
+      }
     }
-  });
+    function requestAndShowPermission() {
+      Notification.requestPermission(function (permission){
+        if (permission === "granted"){
+          showNotification();
+        }
+      });
+    }
 }
 //Notification function end
 
