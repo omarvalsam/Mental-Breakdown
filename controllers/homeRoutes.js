@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
   })
     .then((dbTaskData) => {
       const tasks = dbTaskData.map((task) => task.get({ plain: true }));
-      res.render("projects-page", { tasks });
+      res.sendFile(path.join(__dirname + "/Main-login.html"));
     })
     .catch((err) => {
       console.log(err);
