@@ -11,7 +11,7 @@
 //should it be a function that runs when the submit/save button is pressed? no backend needed?
 
 const router = require("express").Router();
-const { Notification, Task } = require('../../models/notification');
+const { Notification, Task, User } = require('../../models/notification');
 
 
 // Notification function start
@@ -45,7 +45,7 @@ if(showNotification) {
       if(document.visibilityState === "visible"){
         return;
       }
-      var title = "{Task - "title"} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
+      // var title = "{Task - "title"} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
       var notification = new notification(title); //notification will show title variable?
       notification.onclick = () => {
         notification.close();window.parent.focus();
@@ -68,5 +68,5 @@ router.get('/', (req, res) => {
   Task.findAll({
     attributes: ["created_at"]
   })
-  .then()
+  .then(showNotification)
 }); 
