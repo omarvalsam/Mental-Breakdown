@@ -46,7 +46,7 @@ if (showNotification) {
     if (document.visibilityState === "visible") {
       return;
     }
-    var title = "{Task - 'title'} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
+    var title = "Stuff was changed"; //text that brings in the text for "title" and "created_at" from Task model | {Task - 'title'} was changed {Task - created_at}
     var notification = new notification(title); //notification will show title variable?
     notification.onclick = () => {
       notification.close();

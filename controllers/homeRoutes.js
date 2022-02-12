@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 
 // =================================================================
 // This code only will be used if we decide that
-// we want a homepage that redirects us to the login page main login.html
+// we want a homepage that redirects us to the login page main login.html | redirects to login
 // router.get("/login", (req, res) => {
 //   if (req.session.loggedin) {
 //     res.redirect("/");
@@ -45,7 +45,7 @@ router.get("/", (req, res) => {
 // router.get("/Task/:id", (req, res) => {
 //   Task.findOne({
 //     where: { id: req.params.taskid },
-//     attributes: ["task_id", "title", "task_text", "created_at"],
+//     attributes: ["task_id", "title", "task_text", "created_at"], | redirects to Sara's two 
 //     include: [
 //       {
 //         model: User,
