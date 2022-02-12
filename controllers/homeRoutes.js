@@ -1,26 +1,30 @@
 const sequelize = require("../config/connection");
 const { Task, User } = require("../models");
 const router = require("express").Router();
+const path = require("path");
 
 router.get("/", (req, res) => {
   console.log(req.session);
-  Task.findAll({
-    attributes: ["task_id", "title", "task_text", "created_at"],
-    include: [
-      {
-        model: User,
-        attributes: ["username", "email"],
-      },
-    ],
-  })
-    .then((dbTaskData) => {
-      const tasks = dbTaskData.map((task) => task.get({ plain: true }));
-      res.sendFile(path.join(__dirname + "/Main-login.html"));
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  // res.sendFile("", { root: ___dirname });
+  // res.sendFile(path.join("Main-login.html"));
+  res.sendFile(path.join(__dirname + "../../Main-login.html"));
+  // Task.findAll({
+  //   attributes: ["task_id", "title", "task_text", "created_at"],
+  //   include: [
+  //     {
+  //       model: User,
+  //       attributes: ["username", "email"],
+  //     },
+  //   ],
+  // })
+  //   .then((dbTaskData) => {
+  //     const tasks = dbTaskData.map((task) => task.get({ plain: true }));
+  //     res.render("projects-page", { tasks });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).json(err);
+  //   });
 });
 
 // =================================================================
