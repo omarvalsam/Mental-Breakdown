@@ -5,7 +5,7 @@ class Task extends Model {} //originally 'comment.js's - USE THIS AS YOUR MODEL
 
 Task.init(
   {
-    Task_id: {
+    task_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -15,24 +15,20 @@ Task.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Task_text: {
+    task_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
       },
     },
-    createdAt: {
-      type: Date,
-      default: Date.now(),
-    }
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
+    created_by: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
     // post_id: {
     //   type: DataTypes.INTEGER,
     //   references: {

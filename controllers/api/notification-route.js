@@ -21,8 +21,8 @@ Notification.requestPermission().then(function (permission) {
   console.log(permission);
 });
 
-var title = "{Task - "title"} was changed {Task - created_at}";
-var body = {Task - "Task_text"};
+var title = "{Task - 'title'} was changed {Task - created_at}";
+var body = {Task = "Task_text"};
 var notification = new Notification(title, {body});
 
 let showNotification = document.visibilityState !== "visible";
@@ -48,7 +48,7 @@ function showNotification(){
   if(document.visibilityState === "visible"){
     return;
   }
-  var title = "{Task - "title"} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
+  var title = "{Task - 'title'} was changed {Task - created_at}"; //text that brings in the text for "title" and "created_at" from Task model
   var notification = new notification(title); //notification will show title variable?
   notification.onclick = () => {
     notification.close();window.parent.focus();

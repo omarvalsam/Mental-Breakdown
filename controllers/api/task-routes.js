@@ -6,29 +6,6 @@ const { Task, User } = require("../../models/Task");
 router.get("/", (req, res) => {
   console.log("======================");
   Task.findAll({
-<<<<<<< HEAD
-    attributes: [ 
-      'Task_id',
-      'title',
-      'Task_text'
-      [sequelize.literal('(SELECT COUNT(*) FROM mental_breakdowns')] //!!double check this!!
-    ],
-    // order: [['created_at', 'DESC']],
-    include: [
-      {
-        model: 'Task',
-        attributes: ['Task_id', 'title', 'Task_text' ],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
-=======
     // attributes: [
     //   //will change depending on front end structures
     //   "id",
@@ -57,7 +34,6 @@ router.get("/", (req, res) => {
     //     attributes: ["username"],
     //   },
     // ],
->>>>>>> 171cae4420574119e4defb9a06f6af8b7904aeee
   })
     .then((dbTaskData) => res.json(dbTaskData))
     .catch((err) => {
