@@ -10,8 +10,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- icon -->
+		<link rel="icon" type="image/png" href="../favicon-io/favicon-32x32.png">
+		<link rel="manifest" href="/site.webmanifest">
 	</head>
-	<body class="left-sidebar is-preload">
+
+	<body >
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -23,22 +27,24 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="project.html">Projects</a></li>
+								<!-- <li><a href="project.html">Projects</a></li> -->
 								<li class="current"><a href="dashboard.html">Dashboard</a></li>
-								<!-- <li><a href="no-sidebar.html">No Sidebar</a></li> -->
+								<li><a href="/logout">Logout</a></li>
 							</ul>
 						</nav>
 
 				</section>
 
+			<main >
 			<!-- Main -->
-				<section id="main">
+				<section id="main" class="left-sidebar is-preload">
 					<div class="container">
 						<div class="row">
 							<div class="col-3 col-12-medium">
 
 								<!-- Sidebar -->
+
+								<!-- create project box -->
 									<section class="box">
 										<header>
 											<h3>Create a Project Here!</h3>
@@ -48,23 +54,20 @@
 											<a href="#" id="create-new" class="button">Build a New Project</a>
 										</footer>
 									</section>
+
+									<!-- Notifications box -->
 									<section class="box">
 										<header>
-											<h3>Feugiat consequat</h3>
+											<h3>Notifications</h3>
 										</header>
-										<p>Veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat sed lorem consequat feugiat lorem dolore.</p>
+									
 										<ul class="divided">
-											<li><a href="#">Sed et blandit consequat sed</a></li>
-											<li><a href="#">Hendrerit tortor vitae sapien dolore</a></li>
-											<li><a href="#">Sapien id suscipit magna sed felis</a></li>
-											<li><a href="#">Aptent taciti sociosqu ad litora</a></li>
+											
 										</ul>
-										<footer>
-											<a href="#" class="button alt">Ipsum consequat</a>
-										</footer>
 									</section>
 
 							</div>
+							
 							<div class="col-9 col-12-medium imp-medium">
 
 								<!-- Content -->
@@ -116,15 +119,17 @@
 																</footer>
 															</section>
 														</div>
-												</div>
+													</div>
+											</section>
 										</div>
-										
 									</article>
-
 							</div>
+
+							
 						</div>
 					</div>
 				</section>
+			</main>
 
 			<!-- Footer -->
 				<section id="footer">

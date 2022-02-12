@@ -2091,7 +2091,7 @@ input, select, textarea {
 	#main {
 		position: relative;
 		background: #CCE8F4;
-		padding: 4em 0 4em 0;
+		padding: 20px 0;
 	}
 
 		#main:before {
@@ -2113,8 +2113,8 @@ input, select, textarea {
 		position: relative;
 		color: #858484;
 		background-color: #252122;
-		margin-top: 3em;
-		padding: 4em 0;
+		margin-top: 2em;
+		padding: 2em 0;
 	}
 
 		#footer:before {
@@ -2123,7 +2123,7 @@ input, select, textarea {
 			top: 0;
 			left: 0;
 			width: 100%;
-			background: url("images/bg01.png");
+		
 			background-size: 100% 100%;
 			z-index: 0;
 			opacity: 0.5;
@@ -2351,7 +2351,7 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 40px 0;
+				padding: 20px 0;
 			}
 
 		/* Copyright */
@@ -2672,7 +2672,7 @@ input, select, textarea {
 			}
 
 				#header h1 {
-					color: #252122;
+					color: #254E70;
 					font-weight: 900;
 					font-size: 1.75em;
 					letter-spacing: -0.035em;
@@ -2696,7 +2696,7 @@ input, select, textarea {
 		/* Banner */
 
 			#banner {
-				padding: 6em 0;
+				padding: 1em 0;
 				margin: 2em 0 0 0;
 			}
 
@@ -2719,13 +2719,13 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 20px 0;
+				padding: 15px 0;
 			}
 
 		/* Footer */
 
 			#footer {
-				padding: 40px 0 20px 0;
+				padding: 20px 0 20px 0;
 			}
 
 	}
