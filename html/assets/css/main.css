@@ -1570,8 +1570,9 @@ input, select, textarea {
 
 	.box {
 		background: #ffffff;
-		border-bottom: solid 1px #ccc;
+		border: solid 1px #ccc;
 		padding: 2.75em 1.75em 2.75em 1.75em;
+		border-radius: 20px;
 	}
 
 		.box .image.featured {
@@ -1584,7 +1585,8 @@ input, select, textarea {
 
 		.box.post header {
 			padding-top: 1em;
-			margin: 0 0 2em 0;
+			margin: 0 0 1em 0;
+
 		}
 
 		.box.post h2 {
@@ -1601,7 +1603,50 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
+		.project-name {
+			font-size: 28px;
+			font-weight: 600;
+		}
+
+		.to-do {
+			background-color: #37718e;
+		}
+
+		.label {
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			background-color: #254E70;
+			border-radius: 10px;
+			padding: 15px 20px;
+		}
+
+		.in-progress {
+			background-color: #8ee3ef;
+		}
+
+		.done {
+			background-color: #aef3e7;
+		}
+
+		.sos {
+			background-color: #c33c54;
+		}
+
 /* Button */
+
+#create-new {
+	color: #254E70;
+	background-color: #8ee3ef;
+	padding: 10px 20px;
+	margin: 0px 10px 20px 10px;
+	align-items: center;
+}
+
+#create-new:hover {
+	background-color: #37718e;
+	color: #8ee3ef;
+}
 
 	input[type="button"],
 	input[type="submit"],
@@ -1615,7 +1660,7 @@ input, select, textarea {
 		border: 0;
 		border-radius: 5px;
 		background: #c33c54;
-		color: #fff !important;
+		color: #fff ;
 		font-weight: 700;
 		outline: 0;
 		font-size: 1.1em;
@@ -1648,7 +1693,7 @@ input, select, textarea {
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
-			background: #252122;
+			background: #c33c54;
 		}
 
 			input[type="button"].alt:hover,
@@ -1656,7 +1701,7 @@ input, select, textarea {
 			input[type="reset"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
-				background: #353132;
+				background: #c51349;
 			}
 
 			input[type="button"].alt:active,
@@ -1664,7 +1709,7 @@ input, select, textarea {
 			input[type="reset"].alt:active,
 			button.alt:active,
 			.button.alt:active {
-				background: #151112;
+				background: #c51349;
 			}
 
 		input[type="button"].icon:before,
@@ -1936,12 +1981,12 @@ input, select, textarea {
 				}
 
 				#nav > ul > li:hover > a, #nav > ul > li.active > a {
-					background: #37718e;
-					color: #fff;
+					background: #aef3e7;
+					color: #000;
 				}
 
 				#nav > ul > li.current > a {
-					background: #37718e;
+					background: #254E70;
 					color: #fff !important;
 					font-weight: 700;
 				}
@@ -2061,9 +2106,6 @@ input, select, textarea {
 			opacity: 0.1;
 		}
 
-		#main .major h2 {
-			background: #CCE8F4;
-		}
 
 /* Footer */
 
