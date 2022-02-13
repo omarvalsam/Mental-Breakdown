@@ -52,3 +52,21 @@ async function loginFormHandler(event) {
 }
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+
+const element = document.querySelector('#sign-in');
+
+
+element.addEventListener('click', () => {
+    element.classList.add('animate__animated', 'animate__swing');
+});
+
+
+const element2 = document.querySelector('#sign-up');
+
+element2.addEventListener('click',  () => {
+console.log('element2')
+
+element2.classList.add('animate__animated', 'animate__rotateIn');
+});
+
