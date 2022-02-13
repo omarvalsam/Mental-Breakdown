@@ -12,6 +12,7 @@
 
 const router = require("express").Router();
 const { Notification, Task, User } = require("../../models/");
+router.use(express.static(__dirname + '../../public'));
 
 // Notification function #1 start - only for reference
 // typeof Notification !== "undefined";
