@@ -1,5 +1,8 @@
 //middleware start
 const router = express();
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+
 router.use(require('serve-static')(__dirname + '/../../public'));
 router.use(require('cookie-parser')());
 router.use(require('body-parser').urlencoded({ extended: true }));
