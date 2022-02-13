@@ -11,7 +11,7 @@
 //should it be a function that runs when the submit/save button is pressed? no backend needed?
 
 const router = require("express").Router();
-const { Notification, Task, User } = require("../../models/notification");
+const { Notification, Task, User } = require("../../models/");
 
 // Notification function #1 start - only for reference
 // typeof Notification !== "undefined";
@@ -62,7 +62,7 @@ const { Notification, Task, User } = require("../../models/notification");
 
 //new Notification function for appending the text message
 let fillNotifications = () => {
-  document.getElementById('container'); //where container will equal the id in the html
+  document.getElementById('notificationsBox'); //where container will equal the id in the html
   ele.innerHTML += `${title} was updated by ${created_by}`
 }
 //new notification code:

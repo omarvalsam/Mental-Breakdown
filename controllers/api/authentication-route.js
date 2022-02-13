@@ -6,6 +6,8 @@ router.use(require('body-parser').urlencoded({ extended: true }));
 router.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 router.use(passport.initialize());
 router.use(passport.session());
+
+const { Task, User } = require("../../models");
 //middleware end
 
 //strategy start
