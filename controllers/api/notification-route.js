@@ -62,8 +62,8 @@ const { Notification, Task, User } = require("../../models/");
 
 //new Notification function for appending the text message
 let fillNotifications = () => {
-  document.getElementById('notificationsBox'); //where container will equal the id in the html
-  ele.innerHTML += `${title} was updated by ${created_by}`
+  document.getElementById("notificationsBox"); //where container will equal the id in the html
+  element.innerHTML += `${title} was updated by ${username}` //possibly "created_by"
 }
 //new notification code:
 //runs when submit button is pressed/
@@ -72,17 +72,15 @@ newNotification.onclick = function() {
   // console.log("hey, it's beginning to run")
   router.get("/", (req, res) => {
     Task.findOne({
-      attributes: [
+      attributes:[
         "title", "created_by",
-      [sequelize.literal( "(SELECT title FROM mental_breakdowns WHERE created_by = mental_breakdowns.created_by")],
-    ], 
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        }
+        [sequelize.literal( "(SELECT title FROM mental_breakdowns WHERE created_by = mental_breakdowns.created_by")]
       ],
-    }),
+      include: [ 
+        {model: User,
+        attributes: ["username"]}
+      ]
+    })
   })
   fillNotifications();
 }
@@ -94,9 +92,9 @@ newNotification.onclick = function() {
 
 
 //get updated notification
-router.get("/", (req, res) => {
-  console.log("route check!");
-  Task.findAll({
-    attributes: ["created_at"],
-  }).then(showNotification);
-});
+// router.get("/", (req, res) => {
+//   console.log("route check!");
+//   Task.findAll({
+//     attributes: ["created_at"],
+//   }).then(showNotification);
+// });
