@@ -1,6 +1,6 @@
 const User = require("./User");
 const Task = require("./Task");
-const junctionTable = require("./junctionTable");
+const junctionTable = require("./JunctionTable");
 
 Task.belongsToMany(User, {
   through: junctionTable,
