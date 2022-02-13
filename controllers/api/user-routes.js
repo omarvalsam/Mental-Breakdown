@@ -3,7 +3,6 @@ const router = require("express").Router();
 const { User } = require("../../models");
 // get em users!
 router.get("/", (req, res) => {
-  //this method right here will allow us to get all the users!:)
   User.findAll({
     attributes: { exclude: ["password"] },
   })
