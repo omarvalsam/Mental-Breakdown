@@ -63,8 +63,8 @@ router.use(express.static(__dirname + '../../public'));
 
 //new Notification function for appending the text message
 let fillNotifications = () => {
-  document.getElementById("notificationsBox"); //where container will equal the id in the html
-  element.innerHTML += `${title} was updated by ${username}` //possibly "created_by"
+  document.getElementById("notificationsBox").insertAdjacentHTML('beforeend', html_to_insert); //where container will equal the id in the html
+  element.innerHTML += `${title} was updated by ${username}` //possibly "created_by" instead of "username"
 }
 //new notification code:
 //runs when submit button is pressed/
@@ -82,8 +82,7 @@ newNotification.onclick = function() {
         attributes: ["username"]}
       ]
     })
-  })
-  fillNotifications();
+  }).then(fillNotifications);
 }
 //info sent to db, subsequently pulled for generation
 //lets users know when task is changed in the newsfeed part of page
