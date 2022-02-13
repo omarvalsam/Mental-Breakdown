@@ -1677,7 +1677,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #e53359;
+			background: #fd0936;
 		}
 
 		input[type="button"]:active,
@@ -1685,7 +1685,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background: #c51349;
+			background: #fd0936;
 		}
 
 		input[type="button"].alt,
@@ -1701,7 +1701,7 @@ input, select, textarea {
 			input[type="reset"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
-				background: #c51349;
+				background: #fd0936;
 			}
 
 			input[type="button"].alt:active,
@@ -1709,7 +1709,7 @@ input, select, textarea {
 			input[type="reset"].alt:active,
 			button.alt:active,
 			.button.alt:active {
-				background: #c51349;
+				background: #fd0936;
 			}
 
 		input[type="button"].icon:before,
