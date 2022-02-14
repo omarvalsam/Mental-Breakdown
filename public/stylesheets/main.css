@@ -1533,12 +1533,30 @@ table {
   }
 }
 
+/* MODAL */
+.modal {
+  border: solid 3px #254e70;
+  border-radius: 20px;
+  background: #cce8f4;
+  padding: 20px 30px;
+}
+
+.modal-header button {
+  position:relative;
+  align-content: right;
+  font-size: 16px;
+}
+
+#projectModal {
+  /* display: none; */
+}
+
 /* Form */
 
 form label {
   display: block;
   color: #252122;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 0.5em 0;
 }
 
@@ -1550,7 +1568,8 @@ form textarea {
   -webkit-appearance: none;
   display: block;
   border: 0;
-  padding: 0.75em 1em;
+  padding: 1em;
+  margin: 1em;
   font-size: 1em;
   border-radius: 5px;
   border: solid 1px #dddddd;
@@ -2065,7 +2084,7 @@ ul.divided li:first-child {
 
 #nav > ul > li > a {
   border-radius: 5px;
-  color: black;
+  color: #254e70;
   text-decoration: none;
   font-weight: bold;
   padding: 0.6em 1.2em 0.6em 1.2em;
@@ -2079,7 +2098,7 @@ ul.divided li:first-child {
 #nav > ul > li:hover > a,
 #nav > ul > li.active > a {
   background: #aef3e7;
-  color: #000;
+  color: #254e70;
 }
 
 #nav > ul > li.current > a {
@@ -2098,7 +2117,7 @@ ul.divided li:first-child {
   text-align: center;
   position: relative;
   padding: 1em 0;
-  margin: 1em 0 0 0;
+  margin: 0 0 0 0;
 }
 
 #banner header {
@@ -2133,7 +2152,7 @@ ul.divided li:first-child {
 }
 
 #intro section {
-  margin: 3em 0;
+  margin: 1em 0;
   padding: 2.5em 0;
 }
 
@@ -2191,7 +2210,7 @@ ul.divided li:first-child {
 #main {
   position: relative;
   background: #cce8f4;
-  padding: 20px 0;
+  padding: 2rem 0;
 }
 
 #main:before {
@@ -2212,8 +2231,8 @@ ul.divided li:first-child {
   position: relative;
   color: #858484;
   background-color: #252122;
-  margin-top: 2em;
-  padding: 2em 0;
+  margin-top: 0;
+  padding: 3em 0;
 }
 
 #footer:before {
@@ -2333,8 +2352,8 @@ ul.divided li:first-child {
   /* Banner */
 
   #banner {
-    padding: 6em 0;
-    margin: 3em 0 0 0;
+    padding: 4em 0;
+    margin: 2em 0 0 0;
   }
 
   /* Intro */
@@ -2358,7 +2377,7 @@ ul.divided li:first-child {
   /* Main */
 
   #main {
-    padding: 30px 0;
+    padding: 3rem 0;
   }
 
   /* Footer */
@@ -2368,11 +2387,11 @@ ul.divided li:first-child {
   }
 
   #footer:before {
-    height: 2.5em;
+    height: 0;
   }
 
   #footer header {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 0 0;
   }
 
   #footer header h2 {
@@ -2436,9 +2455,8 @@ ul.divided li:first-child {
 
   #intro section {
     position: relative;
-    border-top: solid 1px #dfdfdf;
     margin: 0;
-    padding: 40px 0 0 0;
+    padding: 30px 0 0 0;
   }
 
   #intro section.first {
@@ -2466,7 +2484,7 @@ ul.divided li:first-child {
   /* Main */
 
   #main {
-    padding: 20px 0;
+    padding: 2rem 0;
   }
 
   /* Copyright */
@@ -2846,6 +2864,6 @@ ul.divided li:first-child {
   /* Footer */
 
   #footer {
-    padding: 20px 0 20px 0;
+    padding: 2rem 0;
   }
 }

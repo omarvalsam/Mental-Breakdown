@@ -6,6 +6,7 @@
     padding-top: 15%;
 }
 
+
 .sign-up {
     font-style: "source sans pro";
     font-size: larger;
@@ -26,7 +27,6 @@
   opacity: 1;
   transition: 0.3s;
   
-    
 }
 
 .sign-btn:hover {opacity: 0.1}

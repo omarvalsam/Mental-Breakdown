@@ -40,9 +40,20 @@
 													<header class="major">
 														<h2>My Projects</h2>
 													</header>
+													{{#if projects.length}}
 													<div class="row">
-														{{!-- project partial --}}
+														{{#each projects as |project|}}
+														<div class="col-4 col-6-medium col-12-small">
+														{{> project-info project}}
+														</div>
+														{{/each}}
+														{{else}}
+														<div class="col-12">
+														<h4>You do not have any projects.</h4>
+														</div>
+													{{/if}}
 												  </div>
+
                         </section>
 										</div>
 										

@@ -9,9 +9,9 @@
 		<title>MentalBreakdown Project Manager</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../stylesheets/main.css"/>
 		<!-- icon -->
-		<link rel="icon" type="image/png" href="../favicon-io/favicon-32x32.png">
+		<link rel="icon" type="image/png" href="../favicon-io/android-chrome-192x192.png">
 		<link rel="manifest" href="/site.webmanifest">
 	</head>
 
@@ -51,7 +51,7 @@
 										</header>
 										<p>Build tasks, add collaborators and tackle this project!!</p>
 										<footer>
-											<a href="#" id="create-new" class="button">Build a New Project</a>
+											<button type="'button" id="create-new" class="button" data-toggle="modal" data-target="#myModal">Build a New Project</button>
 										</footer>
 									</section>
 
@@ -88,7 +88,7 @@
 																<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
 																<footer>
 																	<ul class="actions">
-																		<li><a href="#" class="button alt">Keep Working!</a></li>
+																		<li><a href="project.html" class="button alt">Keep Working!</a></li>
 																	</ul>
 																</footer>
 															</section>
@@ -101,7 +101,7 @@
 																<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
 																<footer>
 																	<ul class="actions">
-																		<li><a href="#" class="button alt">Keep Working!</a></li>
+																		<li><a href="project.html" class="button alt">Keep Working!</a></li>
 																	</ul>
 																</footer>
 															</section>
@@ -114,7 +114,7 @@
 																<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
 																<footer>
 																	<ul class="actions">
-																		<li><a href="#" class="button alt">Keep Working!</a></li>
+																		<li><a href="project.html" class="button alt">Keep Working!</a></li>
 																	</ul>
 																</footer>
 															</section>
@@ -123,6 +123,43 @@
 											</section>
 										</div>
 									</article>
+
+									<!-- modal -->
+									<div class="modal fade" id="projectModal" tabindex="-1">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" id="close-button" class="close" data-dismiss="modal">
+													<span>&times;</span></button>
+													<h3>Build a New Project</h3>
+												</div>
+												<div class="modal-body">
+													<!-- form -->
+													<form>
+														<!-- title -->
+														<div class="form-group">
+															<label for="project-title"><h5>Title</h5></label>
+															<input type="text" class="form-control" placeholder="Title">
+														</div>
+														<!-- description -->
+														<div class="form-group">
+															<label for="project-description"><h5>Description</h5></label>
+															<textarea class="form-control" rows="2"></textarea>
+														</div>
+														<!-- collaborators -->
+														<div class="form-group">
+															<label for="project-collaborators"><h5>Collaborators</h5></label>
+															<input type="text" class="form-control" placeholder="Collaborator Username">
+														</div>
+														<!-- submit button -->
+														<button type="submit" class="button">Create!</button>
+													</form>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
 							</div>
 
 							
@@ -152,12 +189,12 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="./public/js/jquery.min.js"></script>
+			<script src="./public/js/jquery.dropotron.min.js"></script>
+			<script src="./public/js/browser.min.js"></script>
+			<script src="./public/js/breakpoints.min.js"></script>
+			<script src="./public/js/util.js"></script>
+			<script src="./public/js/main.js"></script>
 
 	</body>
 </html>
