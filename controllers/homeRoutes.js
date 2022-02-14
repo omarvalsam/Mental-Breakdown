@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 router.get("/login", (req, res) => {
   res.render("login");
   // if (req.session.loggedin) {
-  //   res.redirect("/");is
+  //   res.redirect("/");
   //   return;
   // }
 });
@@ -63,7 +63,7 @@ router.get("/Task/:id", (req, res) => {
       }
       const task = dbTaskData.get({ plain: true });
 
-      res.render("single-task", { post });
+      res.render("single-task", { task });
     })
     .catch((err) => {
       consoel.log(err);

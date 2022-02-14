@@ -29,6 +29,17 @@ Task.init(
         key: "id",
       },
     },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    project_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "project",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,

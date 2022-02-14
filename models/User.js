@@ -33,17 +33,6 @@ User.init(
         len: [6],
       },
     },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    project_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "project",
-        key: "id",
-      },
-    },
   },
   {
     hooks: {
