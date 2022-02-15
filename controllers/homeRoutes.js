@@ -53,6 +53,7 @@ router.get("/userinterface", (req, res) => {
 // This code was written for single posts in mind,
 // will un comment when page is built with handle bars
 <<<<<<< HEAD
+<<<<<<< HEAD
 // router.get("/Task/:id", (req, res) => {
 //   Task.findOne({
 //     where: { id: req.params.taskid },
@@ -77,6 +78,12 @@ router.get("/Task/:id", (req, res) => {
   Task.findOne({
     where: { id: req.params.taskid },
     attributes: ["task_id", "title", "task_text", "created_at"],
+=======
+router.get("/Task/:id", (req, res) => {
+  Task.findOne({
+    where: { id: req.params.taskid },
+    attributes: ["task_id", "title", "task_text", "created_at"], 
+>>>>>>> cm-backend
     include: [
       {
         model: User,
@@ -91,10 +98,16 @@ router.get("/Task/:id", (req, res) => {
           .json({ message: "No Task found with this id, QUE LOSER" });
         return;
       }
+<<<<<<< HEAD
       const task = dbTaskData.get({ plain: true });
 >>>>>>> d9ddf38d99b9f7a1617d660dcfc06e8ac84c89d3
 
       res.render("single-task", { task });
+=======
+      const task = dbtaskData.get({ plain: true });
+
+      res.render("single-task", { post });
+>>>>>>> cm-backend
     })
     .catch((err) => {
       consoel.log(err);

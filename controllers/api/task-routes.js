@@ -64,7 +64,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Task,
-        attributes: ["id", "Task_text", "Task_id", "user_id", "created_at"],
+        attributes: ["title", "Task_text", "Task_id", "created_by"],
         include: {
           model: User,
           attributes: ["username"],
