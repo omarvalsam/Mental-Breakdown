@@ -1,7 +1,14 @@
-var openProjectModal = function(event) {
-  $("#projectModal").modal(show);
-}
+// let projectModal = document.getElementById('projectModal');
 
-document.querySelector("#project-button").addEventListener("submit", openProjectModal);
+
+$('#project-button').click(function() {
+    $('#projectModal').modal({show : true});
+});
+// var openProjectModal = function(event) {
+//   $(projectModal).modal(show);
+// }
+
+// document.getElementById("project-button").addEventListener("click", openProjectModal);
+
 
 
