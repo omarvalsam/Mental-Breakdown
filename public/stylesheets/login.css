@@ -2,14 +2,15 @@
 .sign-in {
     font-style: "source sans pro";
     font-size: larger;
-    color: azure;
+    color: rgb(0, 0, 0);
     padding-top: 15%;
 }
+
 
 .sign-up {
     font-style: "source sans pro";
     font-size: larger;
-    color: azure;
+    color: rgb(0, 0, 0);
     padding-top: 15%;
 }
 
@@ -26,7 +27,6 @@
   opacity: 1;
   transition: 0.3s;
   
-    
 }
 
 .sign-btn:hover {opacity: 0.1}
