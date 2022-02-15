@@ -46,5 +46,7 @@ router.post('/login',
   });
 //authenticate request end
 
+module.exports = passport
+
 
   //found at https://openbase.com/js/passport
