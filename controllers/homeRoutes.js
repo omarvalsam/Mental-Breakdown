@@ -1,47 +1,58 @@
 const sequelize = require("../config/connection");
 const { Task, User } = require("../models");
 const router = require("express").Router();
-const path = require("path");
 
 router.get("/", (req, res) => {
-  console.log(req.session);
-  // res.sendFile("", { root: ___dirname });
-  // res.sendFile(path.join("Main-login.html"));
-  res.sendFile(path.join(__dirname + "../../Main-login.html"));
-  // Task.findAll({
-  //   attributes: ["task_id", "title", "task_text", "created_at"],
-  //   include: [
-  //     {
-  //       model: User,
-  //       attributes: ["username", "email"],
-  //     },
-  //   ],
-  // })
-  //   .then((dbTaskData) => {
-  //     const tasks = dbTaskData.map((task) => task.get({ plain: true }));
-  //     res.render("projects-page", { tasks });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  //   });
+  // console.log(req.session);
+  res.render("homepage");
 });
 
 // =================================================================
 // This code only will be used if we decide that
+<<<<<<< HEAD
 // we want a homepage that redirects us to the login page main login.html | redirects to login
 // router.get("/login", (req, res) => {
 //   if (req.session.loggedin) {
 //     res.redirect("/");
 //     return;
 //   }
+=======
+// we want a homepage that redirects us to the login page main login.html
+router.get("/login", (req, res) => {
+  res.render("login");
+  // if (req.session.loggedin) {
+  //   res.redirect("/");
+  //   return;
+  // }
+});
+>>>>>>> d9ddf38d99b9f7a1617d660dcfc06e8ac84c89d3
 
-//   res.render("login");
-// });
+// this route is intended to be used for the user interface, allowing for the tasks to be mapped out to user dashboard
+router.get("/userinterface", (req, res) => {
+  console.log(req.session);
+  Task.findAll({
+    attributes: ["task_id", "title", "task_text", "created_at"],
+    include: [
+      {
+        model: User,
+        attributes: ["username", "email"],
+      },
+    ],
+  })
+    .then((dbTaskData) => {
+      const tasks = dbTaskData.map((task) => task.get({ plain: true }));
+      res.render("projects-page", { tasks });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // ======================         ======================
 // This code was written for single posts in mind,
 // will un comment when page is built with handle bars
+<<<<<<< HEAD
 // router.get("/Task/:id", (req, res) => {
 //   Task.findOne({
 //     where: { id: req.params.taskid },
@@ -61,13 +72,34 @@ router.get("/", (req, res) => {
 //         return;
 //       }
 //       const task = dbtaskData.get({ plain: true });
+=======
+router.get("/Task/:id", (req, res) => {
+  Task.findOne({
+    where: { id: req.params.taskid },
+    attributes: ["task_id", "title", "task_text", "created_at"],
+    include: [
+      {
+        model: User,
+        attribute: ["username", "email"],
+      },
+    ],
+  })
+    .then((dbTaskData) => {
+      if (!dbTaskData) {
+        res
+          .status(404)
+          .json({ message: "No Task found with this id, QUE LOSER" });
+        return;
+      }
+      const task = dbTaskData.get({ plain: true });
+>>>>>>> d9ddf38d99b9f7a1617d660dcfc06e8ac84c89d3
 
-//       res.render("single-task", { post });
-//     })
-//     .catch((err) => {
-//       consoel.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+      res.render("single-task", { task });
+    })
+    .catch((err) => {
+      consoel.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
