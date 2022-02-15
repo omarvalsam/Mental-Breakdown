@@ -28,8 +28,14 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "node": "^17.4.0",
+<<<<<<< HEAD
     "require": "^2.4.20",
     "sequelize": "^6.16.1",
+=======
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.15.0",
+>>>>>>> 935e1104b964d1ca3ffa496cb0bd8d19e0f2480c
     "session": "^0.1.0"
   },
   "keywords": []
