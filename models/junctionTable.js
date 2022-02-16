@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class junctionTable extends Model {}
+class JunctionTable extends Model {}
 
-junctionTable.init(
+JunctionTable.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -29,4 +29,4 @@ junctionTable.init(
   }
 );
 
-module.exports = junctionTable;
+module.exports = JunctionTable;
