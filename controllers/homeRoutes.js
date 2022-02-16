@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
 });
 
 // =================================================================
+// This code only will be used if we decide that
 // we want a homepage that redirects us to the login page main login.html
 router.get("/login", (req, res) => {
   res.render("login");

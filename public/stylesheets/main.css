@@ -1435,6 +1435,16 @@ input, select, textarea {
 						padding: 40px 0 0 40px;
 					}
 
+/* MODAL*/
+
+.modal form {
+  padding: 20px;
+}
+
+.modal-body {
+  background-color: #cce8f4;
+
+}
 					.row.gtr-200.gtr-uniform {
 						margin-top: -40px;
 					}
@@ -1444,6 +1454,9 @@ input, select, textarea {
 						}
 
 		}
+
+
+
 
 /* Form */
 
@@ -1573,40 +1586,81 @@ input, select, textarea {
 		margin: 2.25em 0 0 0;
 	}
 
+
+/* task card */
+.card {
+  border-radius: 20px;
+}
 /* Box */
 
-	.box {
-		background: #ffffff;
-		border-bottom: solid 1px #ccc;
-		padding: 2.75em 1.75em 2.75em 1.75em;
-	}
+.box {
+  background: #ffffff;
+  border: solid 1px #ccc;
+  padding: 2.75em 1.75em 2.75em 1.75em;
+  border-radius: 20px;
+}
 
-		.box .image.featured {
-			position: relative;
-			width: auto;
-			left: 1.75em;
-			top: 1.75em;
-			margin: -4.5em 0 4.25em -3.5em;
-		}
+.box .image.featured {
+  position: relative;
+  width: auto;
+  left: 1.75em;
+  top: 1.75em;
+  margin: -4.5em 0 4.25em -3.5em;
+}
 
-		.box.post header {
-			padding-top: 1em;
-			margin: 0 0 2em 0;
-		}
+.box.post header {
+  padding-top: 1em;
+  margin: 0 0 1em 0;
+}
 
-		.box.post h2 {
-			font-size: 2.5em;
-			letter-spacing: -0.015em;
-		}
+.box.post h2 {
+  font-size: 2.5em;
+  letter-spacing: -0.015em;
+}
 
-		.box.post header > p {
-			margin-top: 1.25em;
-			font-size: 1.25em;
-		}
+.box.post header > p {
+  margin-top: 1.25em;
+  font-size: 1.25em;
+}
 
-		.box footer ul.actions {
-			margin-bottom: 0;
-		}
+.box footer ul.actions {
+  margin-bottom: 0;
+}
+
+.project-name {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+#to-do {
+  background-color: #37718e;
+  padding: 20px;
+
+}
+
+.label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #254e70;
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+#in-progress {
+  background-color: #8ee3ef;
+  padding: 20px;
+}
+
+#done {
+  background-color: #aef3e7;
+  padding: 20px;
+}
+
+#sos {
+  background-color: #c33c54;
+  padding: 20px;
+}
 
 /* Button */
 
