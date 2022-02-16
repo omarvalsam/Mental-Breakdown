@@ -1,5 +1,5 @@
 //middleware start
-const router = express();
+const router = require("express").Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
@@ -39,8 +39,8 @@ passport.deserializeUser(function(id, done) {
 // sessions end
 
 //authenticate request start
-router.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
+router.post('/User', 
+  passport.authenticate('local', { failureRedirect: '/user' }),
   function(req, res) {
     res.redirect('/');
   });
