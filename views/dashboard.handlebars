@@ -14,7 +14,9 @@
 										</header>
 										<p>Build tasks, add collaborators and tackle this project!!</p>
 										<footer>
-											<a href="#" id="create-new" class="button">Build a New Project</a>
+											<button type="button" id="create-new" class=" button" type="button" data-bs-toggle="modal" data-bs-target="#projectModal">
+												Build a New Project!
+											</button>
 										</footer>
 									</section>
 
@@ -62,4 +64,39 @@
 
 						</div>
 					</div>
+					<!-- create a project modal -->
+									<div id="projectModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered modal-xl">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h3 class="modal-title">Build a New Project</h3>
+													<button type="button" class="button" data-bs-dismiss="modal" aria-label="Close">X</button>
+												</div>
+												<div class="modal-body">
+													<!-- form -->
+													<form >
+														<!-- title -->
+														<div class="form-group">
+															<label for="project-title"><h5>Title</h5></label>
+															<input type="text" class="form-control" placeholder="Title">
+														</div>
+														<!-- description -->
+														<div class="form-group">
+															<label for="project-description"><h5>Description</h5></label>
+															<textarea class="form-control" rows="2"></textarea>
+														</div>
+														<!-- collaborators -->
+														<div class="form-group">
+															<label for="project-collaborators"><h5>Collaborators</h5></label>
+															<input type="text" class="form-control" placeholder="Collaborator Username">
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<!-- submit button -->
+													<button type="button" id="createProject" class="button">Create!</button>
+												</div>
+											</div>
+										</div>
+									</div>
 				</section>
