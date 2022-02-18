@@ -1,0 +1,37 @@
+{
+  "name": "mental-breakdown",
+  "version": "1.0.0",
+  "description": "Group project #2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarvalsam/Mental-Breakdown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omarvalsam/Mental-Breakdown/issues"
+  },
+  "homepage": "https://github.com/omarvalsam/Mental-Breakdown#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^14.2.0",
+    "eslint": "^8.8.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "node": "^17.4.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.15.0",
+    "session": "^0.1.0"
+  },
+  "keywords": []
+}

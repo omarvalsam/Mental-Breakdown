@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const authRoute = require('./authentication-route');
 
 const { User } = require("../../models");
 // get em users!
@@ -42,7 +43,7 @@ router.post("/", (req, res) => {
   }).then((dbUserData) => {
     res, json(dbUserData);
   });
-});
+}); // passport here?
 
 router.post("/login", (req, res) => {
   User.findOne({
@@ -64,7 +65,7 @@ router.post("/login", (req, res) => {
     }
     res.json({ user: dbUserData, message: "You are now logged in :)" });
   });
-});
+}); // passport here?
 
 router.put("/:id", function (req, res) {
   User.update(req.body, {
@@ -104,4 +105,9 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.use('/auth', authRoute)
+router.use(passport.initialize());
+router.use(passport.session());
+
 module.exports = router;
