@@ -28,7 +28,7 @@ router.get("/userinterface", (req, res) => {
   })
     .then((dbTaskData) => {
       const tasks = dbTaskData.map((task) => task.get({ plain: true }));
-      res.render("projects-page", { tasks });
+      res.render("dashboard", { tasks });
     })
     .catch((err) => {
       console.log(err);
