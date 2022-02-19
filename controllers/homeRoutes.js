@@ -12,10 +12,6 @@ router.get("/", (req, res) => {
 // we want a homepage that redirects us to the login page main login.html
 router.get("/login", (req, res) => {
   res.render("login");
-  // if (req.session.loggedin) {
-  //   res.redirect("/");
-  //   return;
-  // }
 });
 
 // this route is intended to be used for the user interface, allowing for the tasks to be mapped out to user dashboard
@@ -32,7 +28,7 @@ router.get("/userinterface", (req, res) => {
   })
     .then((dbTaskData) => {
       const tasks = dbTaskData.map((task) => task.get({ plain: true }));
-      res.render("projects-page", { tasks });
+      res.render("dashboard", { tasks });
     })
     .catch((err) => {
       console.log(err);
@@ -43,10 +39,11 @@ router.get("/userinterface", (req, res) => {
 // ======================         ======================
 // This code was written for single posts in mind,
 // will un comment when page is built with handle bars
+
 // router.get("/Task/:id", (req, res) => {
 //   Task.findOne({
 //     where: { id: req.params.taskid },
-//     attributes: ["task_id", "title", "task_text", "created_at"], | redirects to Sara's two 
+//     attributes: ["task_id", "title", "task_text", "created_at"], | redirects to Sara's two
 //     include: [
 //       {
 //         model: User,
@@ -63,16 +60,10 @@ router.get("/userinterface", (req, res) => {
 //       }
 //       const task = dbtaskData.get({ plain: true });
 
-// router.get("/Task/:id", (req, res) => {
-//   Task.findOne({
-//     where: { id: req.params.taskid },
-//     attributes: ["task_id", "title", "task_text", "created_at"],
-
-router.get("/Task/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   Task.findOne({
     where: { id: req.params.taskid },
-    attributes: ["task_id", "title", "task_text", "created_at"], 
-
+    attributes: ["task_id", "title", "task_text", "created_at"],
     include: [
       {
         model: User,
@@ -87,16 +78,8 @@ router.get("/Task/:id", (req, res) => {
           .json({ message: "No Task found with this id, QUE LOSER" });
         return;
       }
-
       const task = dbTaskData.get({ plain: true });
-
-
       res.render("single-task", { task });
-
-      // const task = dbtaskData.get({ plain: true });
-
-      // res.render("single-task", { post });
-
     })
     .catch((err) => {
       consoel.log(err);
