@@ -42,11 +42,11 @@
 													<header class="major">
 														<h2>My Projects</h2>
 													</header>
-													{{#if projects.length}}
+													{{#if tasks.length}}
 													<div class="row">
-														{{#each projects as |project|}}
+														{{#each tasks as |task|}}
 														<div class="col-4 col-6-medium col-12-small">
-														{{> project-info project}}
+														{{> project-info task}}
 														</div>
 														{{/each}}
 														{{else}}
@@ -78,17 +78,17 @@
 														<!-- title -->
 														<div class="form-group">
 															<label for="project-title"><h5>Title</h5></label>
-															<input type="text" class="form-control" placeholder="Title">
+															<input type="text" id="project-title" class="form-control" placeholder="Title">
 														</div>
 														<!-- description -->
 														<div class="form-group">
 															<label for="project-description"><h5>Description</h5></label>
-															<textarea class="form-control" rows="2"></textarea>
+															<textarea id="project-description" class="form-control" rows="2"></textarea>
 														</div>
 														<!-- collaborators -->
 														<div class="form-group">
 															<label for="project-collaborators"><h5>Collaborators</h5></label>
-															<input type="text" class="form-control" placeholder="Collaborator Username">
+															<input type="text" id="project-collaborators" class="form-control" placeholder="Collaborator Username">
 														</div>
 													</form>
 												</div>
@@ -100,3 +100,6 @@
 										</div>
 									</div>
 				</section>
+
+
+				<script src="/js/projectModal.js"></script>

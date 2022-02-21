@@ -28,6 +28,13 @@ Project.init({
       },
     },
   },
-});
+},
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "project",
+  },
+);
 
 module.exports = Project;

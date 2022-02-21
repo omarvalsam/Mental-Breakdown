@@ -30,8 +30,8 @@
     "node": "^17.4.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "require": "^2.4.20",
-    "sequelize": "^6.16.1",
+    "require": "^0.4.4",
+    "sequelize": "^6.16.2",
     "session": "^0.1.0"
   },
   "keywords": []

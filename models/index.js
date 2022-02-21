@@ -1,6 +1,7 @@
 const User = require("./User");
 const Task = require("./Task");
-const junctionTable = require("./JunctionTable");
+const junctionTable = require("./junctionTable");
+const Project = require("./Project");
 
 Task.belongsToMany(User, {
   through: junctionTable,
@@ -12,4 +13,4 @@ User.belongsToMany(Task, {
   foreignKey: "user_id",
 });
 
-module.exports = { User, Task };
+module.exports = { User, Task, junctionTable, Project };

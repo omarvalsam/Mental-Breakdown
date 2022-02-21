@@ -82,7 +82,7 @@ router.get("/:id", (req, res) => {
       res.render("single-task", { task });
     })
     .catch((err) => {
-      consoel.log(err);
+      console.log(err);
       res.status(500).json(err);
     });
 });
