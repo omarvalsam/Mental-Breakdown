@@ -1,24 +1,27 @@
-# Mental Breakdown for Tasks
+# Mental-Breakdown
+Group project #2
+All of us feel stress. Especially when you have to rely on others! Unexpected hangups, roadblocks, miscommunications, and more can all impact your team’s ability to get your job done…
+Now, imagine a tool that allows your entire team to collaborate effectively and efficiently? Wait no more, dear patron because we have a solution for you!
+This will help by providing a free-to-use collaboration environment and allow you and your teammates to better complete your project!
+Complete with such features as a progress bar to track your progress, a live notification feed that continuously keeps you informed, secure authentication for data protection, and more!!
+Never again have to fret about your progress, questions, or communication skills again!
 
-# Credits
-This project was created by, Chris Miller, Steven Cruz Sara Barton, and Omar Valdivia-Samudio.
 
-# Purpose
-The purpose of this project is to portray a work flow between collegues and instruct us on how to communicate and collate with others to further expand our knowlegde and provide a fully functional application.
+# Heroku 
 
-Simply enter Apex Legends/Twitch username to pull stats from Twitch API
 
-We have created a fun project that is used for gamers, specifically Apex legends gamers. They can use this app to list basic stats to show them what they lack or need to improve. 
+# Technologies Used
+* JavaScript
+* Handlebars
+* Node.JS
+* MySQL
+* PassPort Authenticator
 
--added functions to the app include previous searchs being saved into an array, and as well a search for twitch streamers to view their view count! 
+# Visual
+![](2022-02-15-16-25-42.png)
 
-# Github Repo
-https://github.com/CherMill93/InteractiveFrontEndProject
-
-# Deployed URL
-https://chermill93.github.io/InteractiveFrontEndProject/
-
-# Class Presentation link
-https://docs.google.com/presentation/d/1ZhlWn37EPQlq898LNJlAW-pbOWqmP1mM8ljv7BukOKw/edit?usp=sharing
-
-![](2021-12-30-18-21-48.png)
+# Contributing
+* Omar Valdivia-Samudio
+* Chris Miller
+* Sara Barnett
+* Steven Cruz

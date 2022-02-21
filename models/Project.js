@@ -29,5 +29,3 @@ Project.init({
     },
   },
 });
-
-module.exports = Project;

@@ -105,7 +105,7 @@ router.get("/:id", (req, res) => {
 
 // router.put('/upvote', (req, res) => {
 //   // custom static method created in models/Task.js
-//   Task.upvote(req.body, { Vote, Task, User })
+//   Task.upvote(req.body, { Task, User })
 //     .then(updatedVoteData => res.json(updatedVoteData))
 //     .catch(err => {
 //       console.log(err);
@@ -113,29 +113,30 @@ router.get("/:id", (req, res) => {
 //     });
 // });
 
-// router.put('/:id', (req, res) => {
-//   Task.update(
-//     {
-//       title: req.body.title
-//     },
-//     {
-//       where: {
-//         id: req.params.id
-//       }
-//     }
-//   )
-//     .then(dbTaskData => {
-//       if (!dbTaskData) {
-//         res.status(404).json({ message: 'No Task found with this id' });
-//         return;
-//       }
-//       res.json(dbTaskData);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+router.put('/:id', (req, res) => {
+  Task.update(
+    {
+      title: req.body.title
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbTaskData => {
+      if (!dbTaskData) {
+        res.status(404).json({ message: 'No Task found with this id' });
+        return;
+      }
+      res.json(dbTaskData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 router.delete("/:id", (req, res) => {
   Task.destroy({

@@ -10,8 +10,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../stylesheets/main.css" />
+<<<<<<< HEAD
 		<!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+=======
+		<!-- bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+>>>>>>> cm-backend
 		<!-- icon -->
 		<link rel="icon" type="image/png" href="../public/images/favicon-32x32.png">
 		<link rel="manifest" href="/site.webmanifest">
@@ -55,6 +61,7 @@
 										</section>
 										
 										<section>
+<<<<<<< HEAD
 										<!-- Project Category columns-->
 											<div class="row">
 												<!-- To Do column -->
@@ -81,26 +88,60 @@
 																			</div>
 																		</div>
 																	</div>
+=======
+									<!-- Project Category columns-->
+											<div class="row">
+												<!-- To Do column -->
+												<div class="col-4 col-12-medium">
+													<section class="box to-do">
+														<header>
+															<span class="label">To Do</span>
+															
+														</header>
+														<ul class="to-do-tasks">
+
+														</ul>
+>>>>>>> cm-backend
 													</section>
 												</div>
 												
 												<!-- In Progress Column -->
 												<div class="col-4 col-12-medium">
+<<<<<<< HEAD
 													<section id="in-progress" class="box in-progress">
 														<header>
 															<span class="label">In Progress</span>
 														</header>
 														
+=======
+													<section class="box in-progress">
+														<header>
+															<span class="label">In Progress</span>
+														</header>
+														<ul class="in-progress-tasks">
+
+														</ul>
+>>>>>>> cm-backend
 													</section>
 												</div>
 
 												<!-- Done Column -->
 												<div class="col-4 col-12-medium">
+<<<<<<< HEAD
 													<section id="done" class="box done">
 														<header>
 															<span class="label">Done</span>
 														</header>
 														
+=======
+													<section class="box done">
+														<header>
+															<span class="label">Done</span>
+														</header>
+														<ul class="done-tasks">
+
+														</ul>
+>>>>>>> cm-backend
 													</section>
 												</div>
 											</div>	
@@ -108,12 +149,22 @@
 									</article>
 
 									<!-- create task modal -->
+<<<<<<< HEAD
 									<div id="taskModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered modal-xl">
 											<div class="modal-content">
 												<div class="modal-header">
 													<h3 class="modal-title">Add a New Task</h3>
 													<button type="button" class="button" data-bs-dismiss="modal" aria-label="Close">X</button>
+=======
+									<div class="modal fade" id="taskModal" tabindex="-1">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" id="close-button" class="close" data-dismiss="modal">
+														<span>&times;</span></button>
+													<h3>Add a Task</h3>
+>>>>>>> cm-backend
 												</div>
 												<div class="modal-body">
 													<!-- form -->
@@ -121,17 +172,26 @@
 														<!-- title -->
 														<div class="form-group">
 															<label for="task-title"><h5>Title</h5></label>
+<<<<<<< HEAD
 															<input type="text" name="task-title" class="form-control" placeholder="Title">
+=======
+															<input type="text" class="form-control" placeholder="Title">
+>>>>>>> cm-backend
 														</div>
 														<!-- description -->
 														<div class="form-group">
 															<label for="task-description"><h5>Description</h5></label>
+<<<<<<< HEAD
 															<textarea name="task-description" class="form-control" ></textarea>
+=======
+															<textarea class="form-control" ></textarea>
+>>>>>>> cm-backend
 														</div>
 														<!-- status -->
 														<div class="form-group">
 															<label for="task-status"><h5>Status</h5></label>
 															<!-- radio buttons for status options -->
+<<<<<<< HEAD
 															<div class="form-check">
 																<input class="form-check-input" type="radio" name="status" id="statusToDo">
 																<label class="form-check-label" for="statusToDo">
@@ -146,6 +206,20 @@
 														<!-- submit button -->
 														<button type="button" id="createTask" class="button">Create!</button>
 													</div>
+=======
+															<div class="radio">
+																<label>
+																	<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+																	Option two can be something else and selecting it will deselect option one
+																</label>
+															</div>
+														</div>
+														<!-- submit button -->
+														<button type="submit" class="button">Create!</button>
+													</form>
+												</div>
+
+>>>>>>> cm-backend
 											</div>
 										</div>
 									</div>
@@ -156,6 +230,7 @@
 							<div class="col-3 col-12-medium">
 								
 								<!-- create new task button -->
+<<<<<<< HEAD
 								<button type="button" id="create-new" class=" button" type="button" data-bs-toggle="modal" data-bs-target="#taskModal">Create Task</button>
 
 								<!-- SOS task section -->
@@ -168,6 +243,31 @@
 
 							</div>
 
+=======
+								<a href="#" id="create-new" class="button">Create task</a>
+
+								<!-- SOS task section -->
+									<section class="box sos">
+										<header>
+											<span class="label">SOS</span>
+										</header>
+										<ul class="sos-tasks">
+
+											</ul>
+									</section>
+
+							
+									<!-- project progress box with status bar -->
+									<section class="box">
+										<header>
+											<h3>Project Progress</h3>
+										</header>
+										
+									
+									</section>
+
+							</div>
+>>>>>>> cm-backend
 						</div>
 					</div>
 				</section>
@@ -194,6 +294,7 @@
 
 		</div>
 
+<<<<<<< HEAD
 
 
 			<!-- Scripts -->
@@ -208,5 +309,20 @@
 
 			<!-- bootstrap -->
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+=======
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="../js/project-modal.js"></script>
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+>>>>>>> cm-backend
 	</body>
 </html>

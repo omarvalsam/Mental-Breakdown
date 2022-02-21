@@ -22,7 +22,7 @@
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^14.2.0",
     "eslint": "^8.8.0",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
@@ -30,7 +30,6 @@
     "node": "^17.4.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "require": "^2.4.20",
     "sequelize": "^6.16.1",
     "session": "^0.1.0"
   },

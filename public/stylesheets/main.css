@@ -1533,19 +1533,23 @@ table {
   }
 }
 
-/* MODAL*/
-
-.modal form {
-  padding: 20px;
+/* MODAL */
+.modal {
+  border: solid 3px #254e70;
+  border-radius: 20px;
+  background: #cce8f4;
+  padding: 20px 30px;
 }
 
-.modal-body {
-  background-color: #cce8f4;
-
+.modal-header button {
+  position:relative;
+  align-content: right;
+  font-size: 16px;
 }
 
-
-
+#projectModal {
+  /* display: none; */
+}
 
 /* Form */
 
@@ -1680,11 +1684,6 @@ footer {
   margin: 2.25em 0 0 0;
 }
 
-
-/* task card */
-.card {
-  border-radius: 20px;
-}
 /* Box */
 
 .box {
@@ -1726,10 +1725,8 @@ footer {
   font-weight: 600;
 }
 
-#to-do {
+.to-do {
   background-color: #37718e;
-  padding: 20px;
-
 }
 
 .label {
@@ -1741,19 +1738,16 @@ footer {
   padding: 15px 20px;
 }
 
-#in-progress {
+.in-progress {
   background-color: #8ee3ef;
-  padding: 20px;
 }
 
-#done {
+.done {
   background-color: #aef3e7;
-  padding: 20px;
 }
 
-#sos {
+.sos {
   background-color: #c33c54;
-  padding: 20px;
 }
 
 /* Button */

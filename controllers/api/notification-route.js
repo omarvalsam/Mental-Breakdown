@@ -75,7 +75,7 @@ newNotification.onclick = function() {
     Task.findOne({
       attributes:[
         "title", "created_by",
-        [sequelize.literal( "(SELECT title FROM mental_breakdowns WHERE created_by = mental_breakdowns.created_by")]
+        [sequelize.literal( "(SELECT title FROM mental_breakdowns WHERE created_by = `${username}`")]
       ],
       include: [ 
         {model: User,
