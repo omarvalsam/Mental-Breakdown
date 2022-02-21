@@ -1,0 +1,133 @@
+<section id="main" class="right-sidebar is-preload">
+					<div class="container">
+						<div class="row">
+							<div class="col-9 col-12-medium">
+
+								<!-- Content -->
+								<article class="box post">
+										<section>
+										<header class="major">
+											<h2>{{project.title}}</h2>
+										</header>	
+										</section>
+										
+										<section>
+									<!-- Project Category columns-->
+											<div class="row">
+												<!-- To Do column -->
+												<div class="col-4 col-12-medium">
+													<section id="to-do" class="box to-do">
+														<header>
+															<span class="label">To Do</span>
+														</header>
+														{{#if tasks.length}}
+														  {{#each tasks as |task|}}
+														  <div class="card">
+														  {{> task-info}}
+														  </div>
+														  {{/each}}
+														{{else}}
+														<div class="col-8">
+														<h4>You do not have any tasks.</h4>
+														</div>
+													{{/if}}
+													</section>
+												</div>
+												
+												<!-- In Progress Column -->
+												<div class="col-4 col-12-medium">
+													<section id="in-progress" class="box in-progress">
+														<header>
+															<span class="label">In Progress</span>
+														</header>
+														
+													</section>
+												</div>
+
+												<!-- Done Column -->
+												<div class="col-4 col-12-medium">
+													<section id="done" class="box done">
+														<header>
+															<span class="label">Done</span>
+														</header>
+														
+													</section>
+												</div>
+											</div>	
+										</section>
+									</article>
+
+									<!-- create task modal -->
+									<div id="taskModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered modal-xl">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h3 class="modal-title">Add a New Task</h3>
+													<button type="button" class="button" data-bs-dismiss="modal" aria-label="Close">X</button>
+												</div>
+												<div class="modal-body">
+													<!-- form -->
+													<form>
+														<!-- title -->
+														<div class="form-group">
+															<label for="task-title"><h5>Title</h5></label>
+															<input type="text" class="form-control" placeholder="Title">
+														</div>
+														<!-- description -->
+														<div class="form-group">
+															<label for="task-description"><h5>Description</h5></label>
+															<textarea class="form-control" ></textarea>
+														</div>
+														<!-- status -->
+														<div class="form-group">
+															<label for="task-status"><h5>Status</h5></label>
+															<!-- radio buttons for status options -->
+															<div class="form-check">
+																<input class="form-check-input" type="radio" name="status" id="statusToDo">
+																<label class="form-check-label" for="statusToDo">
+																	To Do
+																</label>
+															</div>
+															<div class="form-check">
+																<input class="form-check-input" type="radio" name="status" id="statusInProgress">
+																<label class="form-check-label" for="statusInProgress">
+																	In Progress
+																</label>
+															</div>
+															<div class="form-check">
+																<input class="form-check-input" type="radio" name="status" id="statusSOS">
+																<label class="form-check-label" for="statusSOS">
+																	SOS
+																</label>
+															</div>
+														</div>
+													</form>
+												</div>
+													<div class="modal-footer">
+														<!-- submit button -->
+														<button type="button" id="create-new" class="button">Create!</button>
+													</div>
+											</div>
+										</div>
+									</div>
+
+							</div>
+
+							<!-- Sidebar -->
+							<div class="col-3 col-12-medium">
+								
+								<!-- create new task button -->
+								<button type="button" id="create-new" class=" button" type="button" data-bs-toggle="modal" data-bs-target="#taskModal">Create Task</button>
+
+								<!-- SOS task section -->
+									<section id="sos" class="box sos">
+										<header>
+											<span class="label">SOS</span>
+										</header>
+										
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
