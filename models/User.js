@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const passport = require('../controllers/api/authentication-route');
+const passport = require('../');
 
 class User extends Model {}
 

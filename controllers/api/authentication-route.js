@@ -14,22 +14,6 @@ router.use(passport.session());
 const { User } = require("../../models");
 //middleware end
 
-passport.serializeUser((user, password, done) => {
-  done(null, user.username);
-  done(null, password.password);
-});
-
-passport.deserializeUser((username, password, done) => {
- try{
-  const result = await db.promise().query(`SELECT * FROM mental_breakdown WHERE USERNAME = '${username}' and PASSWORD = '${password}'`);
-  if (result[0][0]) {
-    done(null, result[0][0]);
-  }
- } catch (err){
-   done(err, null);
- }
-});
-
 
 //strategy start
 passport.use(new LocalStrategy(
@@ -53,25 +37,31 @@ passport.use(new LocalStrategy(
     } catch (err) { 
       done(err, false);
     }
-    // User.findOne({ username: username }, function (err, user) {
-    //   if (err) { return done(err); }
-    //   if (!user) { return done(null, false); }
-    //   if (!user.verifyPassword(password)) { return done(null, false); }
-    //   return done(null, user);
-    // });
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
+      return done(null, user);
+    });
   }
 ));
 //strategy end
 
 //sessions start
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
+passport.serializeUser((user, password, done) => {
+  done(null, user.username);
+  done(null, password.password);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
+passport.deserializeUser((username, password, done) => {
+ try{
+  const result = db.promise().query(`SELECT * FROM mental_breakdown WHERE USERNAME = '${username}' and PASSWORD = '${password}'`);
+  if (result[0][0]) {
+    done(null, result[0][0]);
+  }
+ } catch (err){
+   done(err, null);
+ }
 });
 // sessions end
 

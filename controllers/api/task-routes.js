@@ -103,15 +103,15 @@ router.get("/:id", (req, res) => {
 //     });
 // });
 
-router.put('/upvote', (req, res) => {
-  // custom static method created in models/Task.js
-  Task.upvote(req.body, { Task, User })
-    .then(updatedVoteData => res.json(updatedVoteData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.put('/upvote', (req, res) => {
+//   // custom static method created in models/Task.js
+//   Task.upvote(req.body, { Task, User })
+//     .then(updatedVoteData => res.json(updatedVoteData))
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 router.put('/:id', (req, res) => {
   Task.update(

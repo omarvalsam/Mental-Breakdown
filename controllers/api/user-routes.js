@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
   }).then((dbUserData) => {
     res, json(dbUserData);
   });
-}); // passport here?
+}).then(passport); // passport here?
 
 router.post("/login", (req, res) => {
   User.findOne({
