@@ -1,7 +1,8 @@
 //middleware start
-const router = express();
+const router = require("express").Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const db = require('../../db/schema.sql')
 
 router.use(require('serve-static')(__dirname + '/../../public'));
 router.use(require('cookie-parser')());
@@ -10,12 +11,32 @@ router.use(require('express-session')({ secret: 'keyboard cat', resave: true, sa
 router.use(passport.initialize());
 router.use(passport.session());
 
-const { Task, User } = require("../../models");
+const { User } = require("../../models");
 //middleware end
+
 
 //strategy start
 passport.use(new LocalStrategy(
-  function(username, password, done) {
+  async (username, password, done) => { 
+    try {
+          const result = await db.promise().query(`SELECT * FROM mental_breakdown WHERE USERNAME = '${username}' and PASSWORD = '${password}'`);
+        if (result[0].length === 0){
+          done(null, false);
+        } else {
+          if (result[0][0].password === password) {
+            done(null, result[0][0]);
+          } else {
+            done(null, false);
+          }
+          if (result[0][0].username === username){
+            done(null, result[0][0]); 
+          } else {
+            done(null, false);
+          }
+        } 
+    } catch (err) { 
+      done(err, false);
+    }
     User.findOne({ username: username }, function (err, user) {
       if (err) { return done(err); }
       if (!user) { return done(null, false); }
@@ -27,21 +48,28 @@ passport.use(new LocalStrategy(
 //strategy end
 
 //sessions start
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
+passport.serializeUser((user, password, done) => {
+  done(null, user.username);
+  done(null, password.password);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
+passport.deserializeUser((username, password, done) => {
+ try{
+  const result = db.promise().query(`SELECT * FROM mental_breakdown WHERE USERNAME = '${username}' and PASSWORD = '${password}'`);
+  if (result[0][0]) {
+    done(null, result[0][0]);
+  }
+ } catch (err){
+   done(err, null);
+ }
 });
 // sessions end
 
 //authenticate request start
-router.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
+router.post('/User', 
+  passport.authenticate('local', { failureRedirect: '/user' }),
+  (req, res) => {
+    res.send(200);
     res.redirect('/');
   });
 //authenticate request end
