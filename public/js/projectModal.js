@@ -1,23 +1,21 @@
 async function projectModalHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="project-title"]').value.trim();
+  const title = document.getElementById('project-title').value;
 
-  const description = document.querySelector('textarea[name="project-description"]').value.trim();
+  const description = document.getElementById('project-description').value;
 
-  const collaborators = document.querySelector('input[name="project-collaborators"]').value.trim();
+  const collaborators = document.getElementById('project-collaborators').value;
 
   if (title, description, collaborators) {
-    const response = await fetch('/api/project', {
+    console.log(title, description, collaborators);
+    const response = await fetch('/api/tasks', {
       method: 'POST',
       body: JSON.stringify({
         title,
         description, 
         collaborators
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      })
     });
   
     if (response.ok) {
@@ -26,27 +24,10 @@ async function projectModalHandler(event) {
       alert(response.statusText);
     }
   }
-}
+};
 
 
-document.getElementById('createProject').addEventListener('click', projectModalHandler);
+const createProject = document.getElementById('createProject');
 
+createProject.addEventListener('submit', projectModalHandler);
 
-
-
-// router.post('/', (req, res) => {
-//   // check the session
-//   if (req.session) {
-//     Project.create({
-//       title: req.body.title,
-//       post_id: req.body.post_id,
-//       // use the id from the session
-//       user_id: req.session.user_id
-//     })
-//       .then(dbCommentData => res.json(dbCommentData))
-//       .catch(err => {
-//         console.log(err);
-//         res.status(400).json(err);
-//       });
-//   }
-// });

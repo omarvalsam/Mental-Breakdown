@@ -1,28 +1,25 @@
 async function taskModalHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="task-title"]').value.trim();
+  const title = document.getElementById('task-title').value;
 
-  const description = document.querySelector('textarea[name="task-description"]').value.trim();
+  const task_text = document.getElementById('task-description').value;
 
-  const statusToDo = document.getElementById("statusToDo").append.getElementById('to-do');
-  // const statusInProgress = document.getElementById("statusInProgress").append.getElementById('in-progress');
-  // const statusDone = document.getElementById("statusDone").append.getElementById('done');
-  // const statusSOS = document.getElementById("statusSOS").append.getElementById('sos');
-
+  const status = document.getElementById("statusToDo");
+  status.setAttribute('id', 'to-do');
+  
 
 
-  if (title, description, statusToDo) {
+
+  if (title, task_text, status) {
+    console.log(title, task_text, status);
     const response = await fetch('/api/task:id', {
       method: 'POST',
       body: JSON.stringify({
         title,
-        description, 
-        statusToDo
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+        task_text, 
+        status
+      })
     });
   
     if (response.ok) {
@@ -35,4 +32,6 @@ async function taskModalHandler(event) {
 
 
 
-document.getElementById('createTask').addEventListener('click', taskModalHandler);
+const createTask = document.getElementById('createTask');
+
+createTask.addEventListener('submit', taskModalHandler);
