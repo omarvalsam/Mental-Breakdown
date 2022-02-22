@@ -21,13 +21,13 @@ Project.init(
       validate: {
         len: [1],
       },
-      collaborators: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "user",
-          key: "username",
-        },
-      },
+      // collaborators: {
+      //   type: DataTypes.INTEGER,
+      //   references: {
+      //     model: "user",
+      //     key: "username",
+      //   },
+      // },
     },
   },
   {

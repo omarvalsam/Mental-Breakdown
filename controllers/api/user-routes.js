@@ -1,8 +1,7 @@
 const router = require("express").Router();
-const authRoute = require("./authentication-route");
-
 const { User } = require("../../models");
 // get em users!
+
 router.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] },
@@ -57,6 +56,7 @@ router.post("/login", (req, res) => {
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
+
     if (!validPassword) {
       res
         .status(400)
