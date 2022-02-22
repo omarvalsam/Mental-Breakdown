@@ -4,8 +4,12 @@ All of us feel stress. Especially when you have to rely on others! Unexpected ha
 Now, imagine a tool that allows your entire team to collaborate effectively and efficiently? Wait no more, dear patron because we have a solution for you!
 This will help by providing a free-to-use collaboration environment and allow you and your teammates to better complete your project!
 Complete with such features as a progress bar to track your progress, a live notification feed that continuously keeps you informed, secure authentication for data protection, and more!!
+<<<<<<< HEAD
 Never again have to fret about your progress, questions, or communication skills again!
 
+=======
+Never again have to fret about your mates progress, questions, or communication skills again!
+>>>>>>> 2a48eb2e86a0200cb9f5c9dacba4c1fdc0f832e7
 
 # Heroku 
 
@@ -18,7 +22,11 @@ Never again have to fret about your progress, questions, or communication skills
 * PassPort Authenticator
 
 # Visual
+<<<<<<< HEAD
 ![](2022-02-15-16-25-42.png)
+=======
+
+>>>>>>> 2a48eb2e86a0200cb9f5c9dacba4c1fdc0f832e7
 
 # Contributing
 * Omar Valdivia-Samudio
