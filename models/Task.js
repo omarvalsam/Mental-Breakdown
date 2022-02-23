@@ -22,24 +22,24 @@ Task.init(
         len: [1],
       },
     },
-    created_by: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    project_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "project",
-        key: "id",
-      },
-    },
+    // created_by: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
+    // status: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // project_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "project",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,

@@ -1,105 +1,112 @@
+<!-- Main -->
+<section id="main" class="left-sidebar is-preload">
+  <div class="container">
+    <div class="row">
+      <div class="col-3 col-12-medium">
 
-	<!-- Main -->
-				<section id="main" class="left-sidebar is-preload">
-					<div class="container">
-						<div class="row">
-							<div class="col-3 col-12-medium">
+        <!-- Sidebar -->
 
-								<!-- Sidebar -->
+        <!-- create project box -->
+        <section class="box">
+          <header>
+            <h3>Create a Project Here!</h3>
+          </header>
+          <p>Build tasks, add collaborators and tackle this project!!</p>
+          <footer>
+            <button type="button" id="create-new" class=" button" type="button" data-bs-toggle="modal"
+              data-bs-target="#projectModal">
+              Build a New Project!
+            </button>
+          </footer>
+        </section>
 
-								<!-- create project box -->
-									<section class="box">
-										<header>
-											<h3>Create a Project Here!</h3>
-										</header>
-										<p>Build tasks, add collaborators and tackle this project!!</p>
-										<footer>
-											<button type="button" id="create-new" class=" button" type="button" data-bs-toggle="modal" data-bs-target="#projectModal">
-												Build a New Project!
-											</button>
-										</footer>
-									</section>
+        <!-- Notifications box -->
+        <section class="box">
+          <header>
+            <h3>Notifications</h3>
+          </header>
 
-									<!-- Notifications box -->
-									<section class="box">
-										<header>
-											<h3>Notifications</h3>
-										</header>
-									
-										<ul class="divided" id="notificationsBox">
-											
-										</ul>
-									</section>
+          <ul class="divided" id="notificationsBox">
 
-							</div>
-							
-              <!-- Content -->
-							<div class="col-9 col-12-medium imp-medium">
-									<article class="box post">
-										<div class="col-12">
-											<!-- Projects -->
-												<section>
-													<header class="major">
-														<h2>My Projects</h2>
-													</header>
-													{{#if tasks.length}}
-													<div class="row">
-														{{#each tasks as |task|}}
-														<div class="col-4 col-6-medium col-12-small">
-														{{> project-info task}}
-														</div>
-														{{/each}}
-														{{else}}
-														<div class="col-12">
-														<h4>You do not have any projects.</h4>
-														</div>
-													{{/if}}
-												  </div>
+          </ul>
+        </section>
 
-                        </section>
-										</div>
-										
-									</article>
-							  </div>
+      </div>
 
-						</div>
-					</div>
-					<!-- create a project modal -->
-									<div id="projectModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-										<div class="modal-dialog modal-dialog-centered modal-xl">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h3 class="modal-title">Build a New Project</h3>
-													<button type="button" class="button" data-bs-dismiss="modal" aria-label="Close">X</button>
-												</div>
-												<div class="modal-body">
-													<!-- form -->
-													<form >
-														<!-- title -->
-														<div class="form-group">
-															<label for="project-title"><h5>Title</h5></label>
-															<input type="text" id="project-title" class="form-control" placeholder="Title">
-														</div>
-														<!-- description -->
-														<div class="form-group">
-															<label for="project-description"><h5>Description</h5></label>
-															<textarea id="project-description" class="form-control" rows="2"></textarea>
-														</div>
-														<!-- collaborators -->
-														<div class="form-group">
-															<label for="project-collaborators"><h5>Collaborators</h5></label>
-															<input type="text" id="project-collaborators" class="form-control" placeholder="Collaborator Username">
-														</div>
-													</form>
-												</div>
-												<div class="modal-footer">
-													<!-- submit button -->
-													<button type="button" id="createProject" class="button">Create!</button>
-												</div>
-											</div>
-										</div>
-									</div>
-				</section>
+      <!-- Content -->
+      <div class="col-9 col-12-medium imp-medium">
+        <article class="box post">
+          <div class="col-12">
+            <!-- Projects -->
+            <section>
+              <header class="major">
+                <h2>My Projects</h2>
+              </header>
+              {{#if tasks.length}}
+              <div class="row">
+                {{#each tasks as |task|}}
+                <div class="col-4 col-6-medium col-12-small">
+                  {{> project-info task}}
+                </div>
+                {{/each}}
+                {{else}}
+                <div class="col-12">
+                  <h4>You do not have any projects.</h4>
+                </div>
+                {{/if}}
+              </div>
+
+            </section>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+  <!-- create a project modal -->
+  <div id="projectModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="projectModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Build a New Project</h3>
+          <button type="button" class="button" data-bs-dismiss="modal" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body">
+          <!-- form -->
+          <form id="project-form">
+            <!-- title -->
+            <div class="form-group">
+              <label for="project-title">
+                <h5>Title</h5>
+              </label>
+              <input type="text" id="project-title" class="form-control" placeholder="Title">
+            </div>
+            <!-- description -->
+            <div class="form-group">
+              <label for="project-description">
+                <h5>Description</h5>
+              </label>
+              <textarea id="project-description" class="form-control" rows="2"></textarea>
+            </div>
+            <!-- collaborators -->
+            <div class="form-group">
+              <label for="project-collaborators">
+                <h5>Collaborators</h5>
+              </label>
+              <input type="text" id="project-collaborators" class="form-control" placeholder="Collaborator Username">
+            </div>
+            <button id="createProject" class="button">Create!</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- submit button -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-				<script src="/js/projectModal.js"></script>
+<script src="/js/projectModal.js"></script>
